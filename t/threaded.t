@@ -31,5 +31,11 @@ ok( defined $pid2,	q/$pid2 defined/ );
 ok( defined $ppid2,	q/$ppid2 defined/ );
 ok( $pid,		q/$pid non null/ );
 ok( $pid2,		q/$pid2 non null/ );
-isn't( $pid, $pid2,	q/$pid and $pid2 differ/ );
-isn't( $ppid, $ppid2,	q/$ppid and $ppid2 differ/ );
+
+my $threadmodel = `getconf GNU_LIBPTHREAD_VERSION`;
+
+SKIP: {
+    skip "thread model is $threadmodel", 2 unless $threadmodel =~ /linux/i;
+    isn't( $pid, $pid2,	q/$pid and $pid2 differ/ );
+    isn't( $ppid, $ppid2,	q/$ppid and $ppid2 differ/ );
+}

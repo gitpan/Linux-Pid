@@ -1,4 +1,4 @@
-Linux::Pid version 0.02
+Linux::Pid version 0.03
 =======================
 
 Returns what Linux' C library thinks the PID and PPID are.

@@ -1,5 +1,8 @@
 Revision history for Perl module Linux::Pid.
 
+0.03  Wed Aug 18
+	Skip tests on NPTL.
+
 0.02  Thu Sep 12
 	Prettification.
 

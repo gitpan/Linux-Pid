@@ -8,7 +8,7 @@ use Inline
 IV _getpid()  { return (IV)getpid(); }
 IV _getppid() { return (IV)getppid(); }
 **C**
-    VERSION => (our $VERSION = 0.02),
+    VERSION => (our $VERSION = 0.03),
     NAME    => __PACKAGE__;
 
 *getpid  = \&_getpid;
@@ -52,13 +52,14 @@ mentioning the equivalent C<POSIX::getpid()> and C<POSIX::getppid()>
 functions.)
 
 In fact, this is useful on Linux, with multithreaded programs. Linux' C
-library returns different values of the PID and the PPID from different
-threads. This module forces perl to call the underlying C functions
-C<getpid()> and C<getppid()>.
+library, using the linux thread model, returns different values of the
+PID and the PPID from different threads. (Other thread models such as
+NPTL don't have the same behaviour). This module forces perl to call the
+underlying C functions C<getpid()> and C<getppid()>.
 
 =head1 AUTHOR
 
-Copyright (c) 2002 Rafael Garcia-Suarez. All rights reserved. This
+Copyright (c) 2002-2004 Rafael Garcia-Suarez. All rights reserved. This
 program is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.
 
