@@ -5,3 +5,4 @@ Makefile.PL
 Pid.pm
 t/basic.t
 t/import.t
+t/threaded.t

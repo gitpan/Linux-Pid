@@ -8,7 +8,7 @@ use Inline
 IV _getpid()  { return (IV)getpid(); }
 IV _getppid() { return (IV)getppid(); }
 **C**
-    VERSION => (our $VERSION = 0.01),
+    VERSION => (our $VERSION = 0.02),
     NAME    => __PACKAGE__;
 
 *getpid  = \&_getpid;
@@ -36,7 +36,7 @@ __END__
 
 Linux::Pid - Get the native PID and the PPID on Linux
 
-=head2 SYNOPSIS
+=head1 SYNOPSIS
 
     use Linux::Pid;
     print Linux::Pid::getpid(), "\t", Linux::Pid::getppid(), "\n";
@@ -48,7 +48,7 @@ Linux::Pid - Get the native PID and the PPID on Linux
 
 Why should one use a module to get the PID and the PPID of a process
 where there are the C<$$> variable and the C<getppid()> builtin ? (Not
-mentioning the equivalent C<POSIX::getpid> and C<POSIX::getppid()>
+mentioning the equivalent C<POSIX::getpid()> and C<POSIX::getppid()>
 functions.)
 
 In fact, this is useful on Linux, with multithreaded programs. Linux' C
