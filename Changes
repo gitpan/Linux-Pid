@@ -1,5 +1,8 @@
 Revision history for Perl module Linux::Pid.
 
+0.04  Jun 12 2007
+	Move to an XS implementation, courtesy of Kevin M. Goess
+
 0.03  Wed Aug 18
 	Skip tests on NPTL.
 
